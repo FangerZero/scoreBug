@@ -1,0 +1,53 @@
+<div name="scoreBugBanner" style="height: 50px; font-size:25px; min-width: 1200px; width: auto !important; margin-bottom: 10px;">
+    <div style="width: 200px; height: 50px; background-color:blueviolet; float:left;">
+        <img [src]="leftAd">
+    </div>
+    <div style="width: 200px; height: 50px; float:left;"
+        [style.color] = "homeFont"
+        [style.background-color] = "homeColor">
+            <div style="padding-left:10px; height: 45px; ">
+                {{homeName}}
+            </div>
+        <div style="position:absolute; height: 5px;">
+            <div #team1Timeout1 style="width: 60px; height: 5px; float:left; margin-right: 10px;"
+                [style.background-color] = "homeFont"> </div>
+            <div #team1Timeout2 style="width: 60px; height: 5px; float:left; margin-right: 10px;"
+                [style.background-color] = "homeFont"> </div>
+            <div #team1Timeout3 style="width: 60px; height: 5px; float:left;"
+                [style.background-color] = "homeFont"> </div>
+        </div>
+    </div>
+    <div style="width: 200px; height: 50px; float:left;"
+        [style.color] = "awayFont"
+        [style.background-color] = "awayColor">
+            <div style="padding-left:10px; height: 45px; ">
+                {{awayName}}
+            </div>
+        <div style="position:absolute; height: 5px;">
+            <div #team2Timeout1 style="width: 60px; height: 5px; float:left; margin-right: 10px;"
+                [style.background-color] = "awayFont"> </div>
+            <div #team2Timeout2 style="width: 60px; height: 5px; float:left; margin-right: 10px;"
+                [style.background-color] = "awayFont"> </div>
+            <div #team2Timeout3 style="width: 60px; height: 5px; float:left;"
+                [style.background-color] = "awayFont"> </div>
+        </div>
+    </div>
+    <!--
+    <div style="width: 60px; height: 50px; background-color:gray; float:left; padding-left:10px;">
+        {{gameInfo.qtrDisplay}}
+    </div>
+    <div style="width: 100px; height: 50px; background-color:lightgray; float:left; color:yellow; padding-left:20px;">
+        {{gameInfo.gameClock}}
+    </div>
+    <div style="width: 50px; height: 50px; background-color:gray; float:left; padding-left:10px;">
+        {{gameInfo.playClock}}
+    </div>
+    <div style="width: 130px; height: 50px; background-color:lightgray; float:left; padding-left:20px;">
+        {{gameInfo.downs}} & {{gameInfo.yards}}
+    </div>
+-->
+    <div style="width: 200px; height: 50px; background-color:blueviolet; float:left;">
+        <img [src]="rightAd">
+    </div>
+</div>
+<hr />

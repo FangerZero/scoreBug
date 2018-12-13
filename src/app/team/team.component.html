@@ -1,0 +1,19 @@
+<input class="form-control" 
+    #homeTeamName
+    type="text" 
+    maxlength="8"
+    [value]="homeName"
+    placeholder="Home Team"
+    (change)="updateHomeName(homeTeamName.value)" />
+Font Color <input type="color" #homeTeamFont [value]="homeFont" (change)="updateHomeFont(homeTeamFont.value)">
+Team Color <input type="color" #homeTeamColor [value]="homeColor" (change)="updateHomeColor(homeTeamColor.value)">
+<hr />
+<input class="form-control" 
+    #awayTeamName
+    type="text" 
+    maxlength="8"
+    [value]="awayName"
+    placeholder="Away Team"
+    (change)="updateAwayName(awayTeamName.value)" />
+Font Color <input type="color" #awayTeamFont [value]="awayFont" (change)="updateAwayFont(awayTeamFont.value)">
+Team Color <input type="color" #awayTeamColor [value]="awayColor" (change)="updateAwayColor(awayTeamColor.value)">

@@ -1,0 +1,11 @@
+<input type="file" #qtr1L accept="image/*">
+<button (click)="updateQuarterOneLeft(qtr1L.value)">Submit</button>
+<br />
+<img *ngIf="quarterOneLeft" src="{{quarterOneLeft}}" style="border-style:dashed;">
+<hr />
+
+<input type="file" #qtr1R accept="image/*">
+<button (click)="updateQuarterOneRight(qtr1R.value)">Submit</button>
+<br />
+<img *ngIf="quarterOneRight" src="{{quarterOneRight}}" style="border-style:dashed;">
+<hr />
