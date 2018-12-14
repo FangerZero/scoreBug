@@ -1,52 +1,60 @@
-<div name="scoreBugBanner" style="height: 50px; font-size:25px; min-width: 1200px; width: auto !important; margin-bottom: 10px;">
-    <div style="width: 200px; height: 50px; background-color:blueviolet; float:left;">
+<div name="scoreBugBanner" style="height: 50px; font-size:25px;">
+    <div class="banner-default-size" style="background-color:blueviolet;">
         <img [src]="leftAd">
     </div>
-    <div style="width: 200px; height: 50px; float:left;"
+    <div class="banner-default-size"
         [style.color] = "homeFont"
         [style.background-color] = "homeColor">
-            <div style="padding-left:10px; height: 45px; ">
-                {{homeName}}
-            </div>
-        <div style="position:absolute; height: 5px;">
-            <div #team1Timeout1 style="width: 60px; height: 5px; float:left; margin-right: 10px;"
+        <div class="banner-team-info">
+            {{homeName}}
+        </div>
+        <div style="width:25px; display:inline-block;">
+            <img *ngIf="homeBall" src="../../assets/images/football.png">
+        </div>
+        <div style="text-align: right; width:35px; display:inline-block;">{{homeScore}}</div>
+        <div style="margin-top: -10px; height: 5px;">
+            <div *ngIf="homeTimeouts >= 1" #team1Timeout1 class="banner-timeout" style="margin-right: 10px;"
                 [style.background-color] = "homeFont"> </div>
-            <div #team1Timeout2 style="width: 60px; height: 5px; float:left; margin-right: 10px;"
+            <div *ngIf="homeTimeouts >= 2" #team1Timeout2 class="banner-timeout" style="margin-right: 10px;"
                 [style.background-color] = "homeFont"> </div>
-            <div #team1Timeout3 style="width: 60px; height: 5px; float:left;"
+            <div *ngIf="homeTimeouts >= 3" #team1Timeout3 class="banner-timeout"
                 [style.background-color] = "homeFont"> </div>
         </div>
     </div>
-    <div style="width: 200px; height: 50px; float:left;"
+    <div class="banner-default-size"
         [style.color] = "awayFont"
         [style.background-color] = "awayColor">
-            <div style="padding-left:10px; height: 45px; ">
-                {{awayName}}
-            </div>
-        <div style="position:absolute; height: 5px;">
-            <div #team2Timeout1 style="width: 60px; height: 5px; float:left; margin-right: 10px;"
+        <div class="banner-team-info">
+            {{awayName}}
+        </div>
+        <div style="width:25px; display:inline-block;">
+            <img *ngIf="awayBall" src="../../assets/images/football.png">
+        </div>
+        <div style="text-align: right; width:35px; display:inline-block;">{{awayScore}}</div>
+        <div style="margin-top: -10px; height: 5px;">
+            <div *ngIf="awayTimeouts >= 1" #team2Timeout1 class="banner-timeout" style="margin-right: 10px;"
                 [style.background-color] = "awayFont"> </div>
-            <div #team2Timeout2 style="width: 60px; height: 5px; float:left; margin-right: 10px;"
+            <div *ngIf="awayTimeouts >= 2" #team2Timeout2 class="banner-timeout" style="margin-right: 10px;"
                 [style.background-color] = "awayFont"> </div>
-            <div #team2Timeout3 style="width: 60px; height: 5px; float:left;"
+            <div *ngIf="awayTimeouts >= 3" #team2Timeout3 class="banner-timeout" 
                 [style.background-color] = "awayFont"> </div>
         </div>
     </div>
-    <!--
-    <div style="width: 60px; height: 50px; background-color:gray; float:left; padding-left:10px;">
-        {{gameInfo.qtrDisplay}}
+    
+    <div class="banner-game-info" style="width: 60px;">
+        <div class="banner-right-boarder">{{quarter}}</div>
     </div>
-    <div style="width: 100px; height: 50px; background-color:lightgray; float:left; color:yellow; padding-left:20px;">
-        {{gameInfo.gameClock}}
+    <div class="banner-game-info" style="width: 100px; color:yellow;">
+        <div class="banner-right-boarder">{{gameClock}}</div>
     </div>
-    <div style="width: 50px; height: 50px; background-color:gray; float:left; padding-left:10px;">
-        {{gameInfo.playClock}}
+    <div class="banner-game-info" style="width: 50px;">
+        <div *ngIf="!playClockPaused" style="margin-top: 10px;">{{playClock}}</div>
     </div>
-    <div style="width: 130px; height: 50px; background-color:lightgray; float:left; padding-left:20px;">
-        {{gameInfo.downs}} & {{gameInfo.yards}}
+    <div class="banner-game-info" style="width: 130px;">
+        <div class="banner-left-boarder">{{downs}} & {{yards}}yds</div>
     </div>
--->
-    <div style="width: 200px; height: 50px; background-color:blueviolet; float:left;">
+    
+    <div class="banner-default-size" style="background-color:blueviolet;">
         <img [src]="rightAd">
     </div>
 </div>

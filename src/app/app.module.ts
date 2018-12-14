@@ -16,6 +16,7 @@ import { SponsorComponent } from './sponsor/sponsor.component';
 import { BannerComponent } from './banner/banner.component';
 import { sponsorReducer } from './sponsor/state/sponsor.reducer';
 import { teamReducer } from './team/state/team.reducer';
+import { gameReducer } from './game/state/game.reducer';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { teamReducer } from './team/state/team.reducer';
       logOnly: environment.production
     }),
     StoreModule.forFeature('sponsor',sponsorReducer),
-    StoreModule.forFeature('team',teamReducer)
+    StoreModule.forFeature('team',teamReducer),
+    StoreModule.forFeature('game',gameReducer)
   ],
   providers: [],
   bootstrap: [AppComponent]

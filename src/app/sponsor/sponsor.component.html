@@ -1,11 +1,74 @@
-<input type="file" #qtr1L accept="image/*">
-<button (click)="updateQuarterOneLeft(qtr1L.value)">Submit</button>
-<br />
-<img *ngIf="quarterOneLeft" src="{{quarterOneLeft}}" style="border-style:dashed;">
-<hr />
-
-<input type="file" #qtr1R accept="image/*">
-<button (click)="updateQuarterOneRight(qtr1R.value)">Submit</button>
-<br />
-<img *ngIf="quarterOneRight" src="{{quarterOneRight}}" style="border-style:dashed;">
-<hr />
+<div  style="border-bottom-color: gray; border-bottom-style: solid; border-bottom-width: 1px;">
+    <div style="display: inline-block; ">
+        <h3>Quarter 1</h3>
+        <div style="display: inline-block;">
+            Left
+            <br />
+            <input type="file" #qtr1L accept="image/*" (change)="updateQuarterOneLeft(qtr1L.value)">
+            <br />
+            <img *ngIf="quarterOneLeft" src="{{quarterOneLeft}}" style="border-style:dashed;">
+        </div>
+        <div style="display: inline-block;">
+            Right
+            <br />
+            <input type="file" #qtr1R accept="image/*" (change)="updateQuarterOneRight(qtr1R.value)">
+            <br />
+            <img *ngIf="quarterOneRight" src="{{quarterOneRight}}" style="border-style:dashed;">
+        </div>
+    </div>
+    
+    <div style="display: inline-block; border-left-color: gray; border-left-style: solid; border-left-width: 1px;">
+        <h3>Quarter 2</h3>
+        <div style="display: inline-block;">
+            Left
+            <br />
+            <input type="file" #qtr2L accept="image/*" (change)="updateQuarterTwoLeft(qtr2L.value)">
+            <br />
+            <img *ngIf="quarterTwoLeft" src="{{quarterTwoLeft}}" style="border-style:dashed;">
+        </div>
+        <div style="display: inline-block;">
+            Right
+            <br />
+            <input type="file" #qtr2R accept="image/*" (change)="updateQuarterTwoRight(qtr2R.value)">
+            <br />
+            <img *ngIf="quarterTwoRight" src="{{quarterTwoRight}}" style="border-style:dashed;">
+        </div>
+    </div>
+</div>
+<div>
+    <div style="display: inline-block;">
+        <h3>Quarter 3</h3>
+        <div style="display: inline-block;">
+            Left
+            <br />
+            <input type="file" #qtr3L accept="image/*" (change)="updateQuarterThreeLeft(qtr3L.value)">
+            <br />
+            <img *ngIf="quarterThreeLeft" src="{{quarterThreeLeft}}" style="border-style:dashed;">
+        </div>
+        <div style="display: inline-block;">
+            Right
+            <br />
+            <input type="file" #qtr3R accept="image/*" (change)="updateQuarterThreeRight(qtr3R.value)">
+            <br />
+            <img *ngIf="quarterThreeRight" src="{{quarterThreeRight}}" style="border-style:dashed;">
+        </div>
+    </div>
+    
+    <div style="display: inline-block; border-left-color: gray; border-left-style: solid; border-left-width: 1px;">
+        <h3>Quarter 4</h3>
+        <div style="display: inline-block;">
+            Left
+            <br />
+            <input type="file" #qtr4L accept="image/*" (change)="updateQuarterFourLeft(qtr4L.value)">
+            <br />
+            <img *ngIf="quarterFourLeft" src="{{quarterFourLeft}}" style="border-style:dashed;">
+        </div>
+        <div style="display: inline-block;">
+            Right
+            <br />
+            <input type="file" #qtr4R accept="image/*" (change)="updateQuarterFourRight(qtr4R.value)">
+            <br />
+            <img *ngIf="quarterFourRight" src="{{quarterFourRight}}" style="border-style:dashed;">
+        </div>
+    </div>
+</div>

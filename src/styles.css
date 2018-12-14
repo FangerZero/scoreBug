@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+.btnScore {
+    width: 75px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    display:inline-block;
+    background-color:lightgray;
+    border-color: slategray;
+    border-style: solid;
+    border-width: 1px;
+    margin: 2px;
+
+}

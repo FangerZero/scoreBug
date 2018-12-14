@@ -23,9 +23,9 @@ const initialState: TeamState = {
     homeName: 'Stockmen',
     homeFont: '#FFFFFF',
     homeColor: '#FF0000',
-    awayName: '',
-    awayFont: '#000000',
-    awayColor: '#000000'
+    awayName: 'Stockmen',
+    awayFont: '#FF0000',
+    awayColor: '#FFFFFF'
 };
 
 //******************************
@@ -61,8 +61,6 @@ export const getAwayColor = createSelector(
 // Update State
 export function teamReducer(state = initialState, action: TeamActions): TeamState {
      switch (action.type) {
-         //**********************//
-        //***   Team Setup   ***//
         case TeamActionTypes.SetAwayName:
             return { ...state, awayName: action.payload }
         case TeamActionTypes.SetAwayFont:
@@ -75,50 +73,6 @@ export function teamReducer(state = initialState, action: TeamActions): TeamStat
             return { ...state, homeFont: action.payload }
         case TeamActionTypes.SetHomeColor:
             return { ...state, homeColor: action.payload }
-         //*************************//
-        //***   Advertisement   ***//
-        /*
-        case 'QUARTER_ONE_LEFT':
-            return {
-                ...state,
-                quarterOneLeft: action.payload
-            }
-        case 'QUARTER_ONE_RIGHT':
-            return {
-                ...state,
-                quarterOneRight: action.payload
-            }
-        case 'QUARTER_TWO_LEFT':
-            return {
-                ...state,
-                quarterTwoLeft: action.payload
-            }
-        case 'QUARTER_TWO_RIGHT':
-            return {
-                ...state,
-                quarterTwoRight: action.payload
-            }
-        case 'QUARTER_THREE_LEFT':
-            return {
-                ...state,
-                quarterThreeLeft: action.payload
-            }
-        case 'QUARTER_THREE_RIGHT':
-            return {
-                ...state,
-                quarterThreeRight: action.payload
-            }
-        case 'QUARTER_FOUR_LEFT':
-            return {
-                ...state,
-                quarterFourLeft: action.payload
-            }
-        case 'QUARTER_FOUR_RIGHT':
-            return {
-                ...state,
-                quarterFourRight: action.payload
-            }
-        */
         default:
             return state;
     }
