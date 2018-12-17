@@ -35,38 +35,38 @@ export class SponsorComponent {
     }
 
     updateQuarterOneLeft(url: string): void {
-        var img = '../../assets/images/sponsor/'+url.split("\\").pop();
+        var img = url.split("\\").pop();
         this.store.dispatch(new sponsorActions.SetQuarterOneLeft(img));
     }
     updateQuarterOneRight(url: string): void {
-        var img = '../../assets/images/sponsor/'+url.split("\\").pop();
+        var img = url.split("\\").pop();
         this.store.dispatch(new sponsorActions.SetQuarterOneRight(img));
     }
 
     updateQuarterTwoLeft(url: string): void {
-        var img = '../../assets/images/sponsor/'+url.split("\\").pop();
+        var img = url.split("\\").pop();
         this.store.dispatch(new sponsorActions.SetQuarterTwoLeft(img));
     }
     updateQuarterTwoRight(url: string): void {
-        var img = '../../assets/images/sponsor/'+url.split("\\").pop();
+        var img = url.split("\\").pop();
         this.store.dispatch(new sponsorActions.SetQuarterTwoRight(img));
     }
 
     updateQuarterThreeLeft(url: string): void {
-        var img = '../../assets/images/sponsor/'+url.split("\\").pop();
+        var img = url.split("\\").pop();
         this.store.dispatch(new sponsorActions.SetQuarterThreeLeft(img));
     }
     updateQuarterThreeRight(url: string): void {
-        var img = '../../assets/images/sponsor/'+url.split("\\").pop();
+        var img = url.split("\\").pop();
         this.store.dispatch(new sponsorActions.SetQuarterThreeRight(img));
     }
 
     updateQuarterFourLeft(url: string): void {
-        var img = '../../assets/images/sponsor/'+url.split("\\").pop();
+        var img = url.split("\\").pop();
         this.store.dispatch(new sponsorActions.SetQuarterFourLeft(img));
     }
     updateQuarterFourRight(url: string): void {
-        var img = '../../assets/images/sponsor/'+url.split("\\").pop();
+        var img = url.split("\\").pop();
         this.store.dispatch(new sponsorActions.SetQuarterFourRight(img));
     }
 }

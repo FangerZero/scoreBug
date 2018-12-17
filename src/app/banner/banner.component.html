@@ -1,6 +1,6 @@
 <div name="scoreBugBanner" style="height: 50px; font-size:25px;">
     <div class="banner-default-size" style="background-color:blueviolet;">
-        <img [src]="leftAd">
+        <img *ngIf="leftAd" src="assets/images/sponsor/{{leftAd}}">
     </div>
     <div class="banner-default-size"
         [style.color] = "homeFont"
@@ -9,7 +9,7 @@
             {{homeName}}
         </div>
         <div class="banner-game-ball">
-            <img *ngIf="homeBall" src="../../assets/images/football.png">
+            <img *ngIf="homeBall" src="assets/images/football.png">
         </div>
         <div class="banner-score-info">{{homeScore}}</div>
         <div style="margin-top: -10px; height: 5px;">
@@ -28,7 +28,7 @@
             {{awayName}}
         </div>
         <div class="banner-game-ball">
-            <img *ngIf="awayBall" src="../../assets/images/football.png">
+            <img *ngIf="awayBall" src="assets/images/football.png">
         </div>
         <div class="banner-score-info">{{awayScore}}</div>
         <div style="margin-top: -10px; height: 5px;">
@@ -55,7 +55,7 @@
     </div>
     
     <div class="banner-default-size" style="background-color:blueviolet;">
-        <img [src]="rightAd">
+        <img *ngIf="rightAd" src="assets/images/sponsor/{{rightAd}}">
     </div>
 </div>
 <hr />
