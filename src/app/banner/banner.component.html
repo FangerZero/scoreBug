@@ -8,10 +8,10 @@
         <div class="banner-team-info">
             {{homeName}}
         </div>
-        <div style="width:25px; display:inline-block;">
+        <div class="banner-game-ball">
             <img *ngIf="homeBall" src="../../assets/images/football.png">
         </div>
-        <div style="text-align: right; width:35px; display:inline-block;">{{homeScore}}</div>
+        <div class="banner-score-info">{{homeScore}}</div>
         <div style="margin-top: -10px; height: 5px;">
             <div *ngIf="homeTimeouts >= 1" #team1Timeout1 class="banner-timeout" style="margin-right: 10px;"
                 [style.background-color] = "homeFont"> </div>
@@ -27,10 +27,10 @@
         <div class="banner-team-info">
             {{awayName}}
         </div>
-        <div style="width:25px; display:inline-block;">
+        <div class="banner-game-ball">
             <img *ngIf="awayBall" src="../../assets/images/football.png">
         </div>
-        <div style="text-align: right; width:35px; display:inline-block;">{{awayScore}}</div>
+        <div class="banner-score-info">{{awayScore}}</div>
         <div style="margin-top: -10px; height: 5px;">
             <div *ngIf="awayTimeouts >= 1" #team2Timeout1 class="banner-timeout" style="margin-right: 10px;"
                 [style.background-color] = "awayFont"> </div>

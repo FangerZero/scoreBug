@@ -7,11 +7,13 @@ import * as fromSponsor from '../sponsor/state/sponsor.reducer';
 
 @Component({
     selector: 'sb-game',
-    templateUrl: './game.component.html'
+    templateUrl: './game.component.html',
+    styleUrls: ['./game.component.css']
 })
 
 export class GameComponent {
     title = 'ScoreBug Game';
+    // Timers
     x;
     y;
     // Sponsor Info
@@ -71,7 +73,7 @@ export class GameComponent {
     pauseGameClock(): void {
         this.store.dispatch(new gameActions.SetGameClockPaused(!this.gameClockPaused));
         if(!this.gameClockPaused) {
-            this.getTotalSeconds()
+            this.getGameClockSeconds();
         } else {
             clearInterval(this.x);
         }
@@ -79,7 +81,7 @@ export class GameComponent {
     updateGameClock(gameClock: string): void {
         this.store.dispatch(new gameActions.SetGameClock(gameClock));
     }
-    getTotalSeconds(): void {
+    getGameClockSeconds(): void {
         var tmpTime = "";
         var currentClock = this.gameClock;
         var timerRay = currentClock.split(":");
@@ -105,7 +107,6 @@ export class GameComponent {
             if (timeLeft <= 0) {
                 clearInterval(this.x);
                 tmpTime = "0:00";
-                
             } else {
                 tmpTime = minutes.toString() + ":" + secondsDisplay;
             }
@@ -125,7 +126,7 @@ export class GameComponent {
     pausePlayClock(): void {
         this.store.dispatch(new gameActions.SetPlayClockPaused(!this.playClockPaused));
         if(!this.playClockPaused) {
-            this.getPlayClockSeconds()
+            this.getPlayClockSeconds();
         } else {
             clearInterval(this.y);
         }
@@ -165,6 +166,8 @@ export class GameComponent {
                 this.store.dispatch(new gameActions.SetQuarter(this.quarter+quarter));
                 this.store.dispatch(new gameActions.SetGameClock("15:00"));
                 this.store.dispatch(new gameActions.SetGameClockPaused(true));
+                clearInterval(this.x);
+                this.resetPlayClock();
                 if(this.quarter === 3) {
                     this.store.dispatch(new gameActions.SetHomeTimeouts(3));
                     this.store.dispatch(new gameActions.SetAwayTimeouts(3));
@@ -184,7 +187,6 @@ export class GameComponent {
         if ((this.downs === 1 && downs === 1) ||
             (this.downs === 4 && downs === -1) || 
             (this.downs > 1 && this.downs < 4)) {
-                //this.downs+=downs;
                 this.store.dispatch(new gameActions.SetDowns(this.downs+downs));
         }
     }
@@ -228,16 +230,26 @@ export class GameComponent {
         if ((this.homeTimeouts === 0 && timeout === 1) ||
             (this.homeTimeouts === 3 && timeout === -1) || 
             (this.homeTimeouts > 0 && this.homeTimeouts < 3)) {
-                //this.homeTimeouts+=timeout;
                 this.store.dispatch(new gameActions.SetHomeTimeouts(this.homeTimeouts+timeout));
+        }
+        if (timeout === -1) {
+            if (!this.gameClockPaused) {
+                this.pauseGameClock();
+            }
+            this.resetPlayClock();
         }
     }
     updateAwayTimeouts(timeout: number): void {
         if ((this.awayTimeouts === 0 && timeout === 1) ||
             (this.awayTimeouts === 3 && timeout === -1) || 
             (this.awayTimeouts > 0 && this.awayTimeouts < 3)) {
-                //this.awayTimeouts+=timeout;
                 this.store.dispatch(new gameActions.SetAwayTimeouts(this.awayTimeouts+timeout));
+        }
+        if (timeout === -1) {
+            if (!this.gameClockPaused) {
+                this.pauseGameClock();
+            }
+            this.resetPlayClock();
         }
     }
 

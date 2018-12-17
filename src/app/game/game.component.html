@@ -1,47 +1,47 @@
 <!-------------------->
 <!--    Home Team   -->
-<div style="width: 33%; height:265px; background-color: gray; float:left; text-align:center">
+<div class="team-info">
     <h3>Home Team</h3>
     <div style="padding-bottom:10px;">
         Timeouts
         <br />
-        <button (click)="updateHomeTimeouts(-1)">-</button>
-        <input class="form-control"
+        <button (click)="updateHomeTimeouts(-1)" class='game-btn'>-</button>
+        <input class="game-input"
             #homeTeamTimeouts
             type="text"
             [value]="homeTimeouts"
             style="width:20px; text-align: center;"
             disabled="disabled">
-        <button (click)="updateHomeTimeouts(1)">+</button>
+        <button (click)="updateHomeTimeouts(1)" class='game-btn'>+</button>
     </div>
     <div style="padding-bottom:10px;">
         Score
         <br />
-        <div class="btnScore" (click)="updateHomeScore(1)">1</div>
-        <div class="btnScore" (click)="updateHomeScore(2)">2</div>
-        <div class="btnScore" (click)="updateHomeScore(3)">3</div>
-        <div class="btnScore" (click)="updateHomeScore(6)">6</div>
+        <div class="score-btn" (click)="updateHomeScore(1)">1</div>
+        <div class="score-btn" (click)="updateHomeScore(2)">2</div>
+        <div class="score-btn" (click)="updateHomeScore(3)">3</div>
+        <div class="score-btn" (click)="updateHomeScore(6)">6</div>
         <br />
-        <div class="btnScore" (click)="updateHomeScore(-1)">-1</div>
-        <div class="btnScore" (click)="updateHomeScore(-2)">-2</div>
-        <div class="btnScore" (click)="updateHomeScore(-3)">-3</div>
-        <div class="btnScore" (click)="updateHomeScore(-6)">-6</div>
+        <div class="score-btn" (click)="updateHomeScore(-1)">-1</div>
+        <div class="score-btn" (click)="updateHomeScore(-2)">-2</div>
+        <div class="score-btn" (click)="updateHomeScore(-3)">-3</div>
+        <div class="score-btn" (click)="updateHomeScore(-6)">-6</div>
     </div>
 </div>
 <!-------------------->
 <!--    Game Info   -->
-<div style="width: 33%; height:265px; background-color:lightblue; float:left; text-align:center;">
+<div class="game-info">
     <h3>Game Information</h3>
     <div style="padding-bottom:10px;">
         Game Clock
-        <input class="form-control"
+        <input class="game-input"
             type="text"
             [value]="gameClock"
             style="width:50px; text-align: center;"
             disabled="disabled">
-        <button *ngIf="!gameClockPaused" (click)="pauseGameClock()">Pause</button>
-        <button *ngIf="gameClockPaused" (click)="pauseGameClock()">Start</button>
-        <input class="form-control"
+        <button *ngIf="!gameClockPaused" (click)="pauseGameClock()" class="game-btn clock-btn">Pause</button>
+        <button *ngIf="gameClockPaused" (click)="pauseGameClock()" class='game-btn clock-btn'>Start</button>
+        <input class="game-input"
             #setGameClock
             type="text"
             [value]="gameClock"
@@ -50,44 +50,43 @@
     </div>
     <div style="padding-bottom:10px;">
         Play Clock
-        <input class="form-control"
+        <input class="game-input"
             type="text"
             [value]="playClock"
             style="width:20px; text-align: center;"
             disabled="disabled">
-        <button *ngIf="!playClockPaused" (click)="pausePlayClock()">Pause</button>
-        <button *ngIf="playClockPaused" (click)="pausePlayClock()">Start</button>
-        <button (click)="resetPlayClock()">Reset</button>
+        <button *ngIf="playClockPaused" (click)="pausePlayClock()" class='game-btn clock-btn'>Start</button>
+        <button *ngIf="!playClockPaused" (click)="resetPlayClock()" class='game-btn clock-btn'>Reset</button>
     </div>
     <div style="padding-bottom:10px;">
         Quarter
-        <button (click)="updateQuarter(-1)">-</button>
-        <input class="form-control"
+        <button (click)="updateQuarter(-1)" class='game-btn'>-</button>
+        <input class="game-input"
             type="text"
             [value]="quarter"
             style="width:20px; text-align: center;"
             disabled="disabled">
-        <button (click)="updateQuarter(+1)">+</button>
+        <button (click)="updateQuarter(+1)" class='game-btn'>+</button>
     </div>
     <div style="padding-bottom:10px;">
         Downs
-        <button (click)="updateDowns(-1)">-</button>
-        <input class="form-control"
+        <button (click)="updateDowns(-1)" class='game-btn'>-</button>
+        <input class="game-input"
             type="text"
             [value]="downs"
             style="width:20px; text-align: center;"
             disabled="disabled">
-        <button (click)="updateDowns(+1)">+</button>
+        <button (click)="updateDowns(+1)" class='game-btn'>+</button>
         Yards
-        <button (click)="addYards(-1)">-</button>
-        <input class="form-control"
+        <button (click)="addYards(-1)" class='game-btn'>-</button>
+        <input class="game-input"
             #gameYards
             type="text"
             [value]="yards"
             style="width:20px; text-align: center;"
             (blur)="updateYards(gameYards.value)">
-        <button (click)="addYards(+1)">+</button>
-        <button (click)="resetDownsYards()">Reset</button>
+        <button (click)="addYards(+1)" class='game-btn'>+</button>
+        <button (click)="resetDownsYards()" class='game-btn'>Reset</button>
     </div>
     <div style="padding-bottom:10px;">
         Ball
@@ -107,31 +106,31 @@
 </div>
 <!-------------------->
 <!--    Away Team   -->
-<div style="width: 33%; height:265px; background-color: gray; float:left; text-align:center;">
+<div class="team-info">
     <h3>Away Team</h3>
     <div style="padding-bottom:10px;">
         Timeouts
         <br />
-        <button (click)="updateAwayTimeouts(-1)">-</button>
-        <input class="form-control"
+        <button (click)="updateAwayTimeouts(-1)" class='game-btn'>-</button>
+        <input class="game-input"
             #awayTeamTimeouts
             type="text"
             [value]="awayTimeouts"
             style="width:20px; text-align: center;"
             disabled="disabled">
-        <button (click)="updateAwayTimeouts(1)">+</button>
+        <button (click)="updateAwayTimeouts(1)" class='game-btn'>+</button>
     </div>
     <div style="padding-bottom:10px;">
         Score
         <br />
-        <div class="btnScore" (click)="updateAwayScore(1)">1</div>
-        <div class="btnScore" (click)="updateAwayScore(2)">2</div>
-        <div class="btnScore" (click)="updateAwayScore(3)">3</div>
-        <div class="btnScore" (click)="updateAwayScore(6)">6</div>
+        <div class="score-btn" (click)="updateAwayScore(1)">1</div>
+        <div class="score-btn" (click)="updateAwayScore(2)">2</div>
+        <div class="score-btn" (click)="updateAwayScore(3)">3</div>
+        <div class="score-btn" (click)="updateAwayScore(6)">6</div>
         <br />
-        <div class="btnScore" (click)="updateAwayScore(-1)">-1</div>
-        <div class="btnScore" (click)="updateAwayScore(-2)">-2</div>
-        <div class="btnScore" (click)="updateAwayScore(-3)">-3</div>
-        <div class="btnScore" (click)="updateAwayScore(-6)">-6</div>
+        <div class="score-btn" (click)="updateAwayScore(-1)">-1</div>
+        <div class="score-btn" (click)="updateAwayScore(-2)">-2</div>
+        <div class="score-btn" (click)="updateAwayScore(-3)">-3</div>
+        <div class="score-btn" (click)="updateAwayScore(-6)">-6</div>
     </div>
 </div>

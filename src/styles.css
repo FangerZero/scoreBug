@@ -4,16 +4,31 @@ body {
     background-color: whitesmoke;
 }
 
-.btnScore {
-    width: 75px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
-    display:inline-block;
-    background-color:lightgray;
-    border-color: slategray;
-    border-style: solid;
-    border-width: 1px;
-    margin: 2px;
-
+nav {
+    margin: 5px 0px;
+}
+ul.navbar-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li.nav-item {
+    display: inline;
+    background-color: #dddddd;
+    padding: 5px;
+}
+a.nav-link {
+    text-decoration: none;
+    font-weight: bold;
+}
+li.nav-item:hover,
+li.nav-item a:hover,
+li.nav-item a:active, 
+li.active-link,
+li.active-link a,
+li.active-link a:hover,
+li.active-link a:active {
+    text-decoration: none;
+    background-color: #111;
+    color: #ddd;
 }

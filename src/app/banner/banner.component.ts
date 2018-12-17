@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { Store, select } from '@ngrx/store';
 
-import * as fromSponsor from '../sponsor/state/sponsor.reducer';
 import * as fromTeam from '../team/state/team.reducer';
 import * as fromGame from '../game/state/game.reducer';
 

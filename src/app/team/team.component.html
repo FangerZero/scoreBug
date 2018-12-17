@@ -1,7 +1,7 @@
 <input class="form-control" 
     #homeTeamName
     type="text" 
-    maxlength="8"
+    maxlength="10"
     [value]="homeName"
     placeholder="Home Team"
     (change)="updateHomeName(homeTeamName.value)" />
@@ -11,7 +11,7 @@ Team Color <input type="color" #homeTeamColor [value]="homeColor" (change)="upda
 <input class="form-control" 
     #awayTeamName
     type="text" 
-    maxlength="8"
+    maxlength="10"
     [value]="awayName"
     placeholder="Away Team"
     (change)="updateAwayName(awayTeamName.value)" />
